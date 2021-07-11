@@ -1,4 +1,5 @@
 const categoriesEl = document.querySelectorAll('.item');
+
 console.log(`В списке ${categoriesEl.length} категории.`);
 
 categoriesEl.forEach(item => {

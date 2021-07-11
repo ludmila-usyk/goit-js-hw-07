@@ -17,6 +17,8 @@
 // };
 
 
+
+
 //02 const form = document.querySelector('.js-register-form');
 // form.addEventListener('submit', onFormSubmit);
 
@@ -32,33 +34,81 @@
 // };
 
 
-//03
-const refs = {
-    input: document.querySelector('.js-input'),
-    nameLabel: document.querySelector('.js-button > span'),
-    licenseCheckbox: document.querySelector('.js-license'),
-    btn: document.querySelector('.js-button'),
-}
-// refs.input.addEventListener('focus', onInputFocus);
-// refs.input.addEventListener('blur', onInputBlur);
-// refs.input.addEventListener('change', onInputChange);
+
+
+// //03
+// const refs = {
+//     input: document.querySelector('.js-input'),
+//     nameLabel: document.querySelector('.js-button > span'),
+//     licenseCheckbox: document.querySelector('.js-license'),
+//     btn: document.querySelector('.js-button'),
+// }
+// // refs.input.addEventListener('focus', onInputFocus);
+// // refs.input.addEventListener('blur', onInputBlur);
+// // refs.input.addEventListener('change', onInputChange);
+// // refs.input.addEventListener('input', onInputChange);
 // refs.input.addEventListener('input', onInputChange);
-refs.input.addEventListener('input', onInputChange);
-refs.licenseCheckbox.addEventListener('change', onLicenseChange);
+// refs.licenseCheckbox.addEventListener('change', onLicenseChange);
 
-function onInputFocus() {
-    console.log('инпут получил focus - собитие focus');
-};
-function onInputBlur() {
-    console.log('инпут потерял focus - собитие blur');
-};
-function onInputChange(event) {
-    console.log(event.currentTarget.value);
-    refs.nameLabel.textContent = event.currentTarget.value;
-};
-function onLicenseChange(event) {
-    console.log(event.currentTarget.checked);
-    console.log('refs.btn.disabled: ', refs.btn.disabled);
+// function onInputFocus() {
+//     console.log('инпут получил focus - собитие focus');
+// };
+// function onInputBlur() {
+//     console.log('инпут потерял focus - собитие blur');
+// };
+// function onInputChange(event) {
+//     console.log(event.currentTarget.value);
+//     refs.nameLabel.textContent = event.currentTarget.value;
+// };
+// function onLicenseChange(event) {
+//     console.log(event.currentTarget.checked);
+//     console.log('refs.btn.disabled: ', refs.btn.disabled);
 
-    refs.btn.disabled = !event.currentTarget.checked;
-};
+//     refs.btn.disabled = !event.currentTarget.checked;
+// };
+
+
+
+// //04
+// const refs = {
+//     output: document.querySelector('.js-output'),
+//     clearBtn: document.querySelector('.js-clear'),
+// };
+
+// window.addEventListener('keypress', onKeypress);
+// refs.clearBtn.addEventListener('click', onClearOutput);
+
+// function onKeypress(event) {
+//     // console.log(event);
+//     // console.log('event.key:', event.key);
+//     // console.log('event.code: ', event.code);
+
+//     refs.output.textContent += event.key;
+// };
+
+// function onClearOutput () {
+//     refs.output.textContent = ' ';
+// };
+
+
+
+
+//05
+// const boxRef = document.querySelector('.js-box');
+
+// boxRef.addEventListener('mouseover', onMouseEnter);
+// boxRef.addEventListener('mouseout', onMouseLeave);
+// //boxRef.addEventListener('mousemove', onMouseMove);
+
+// function onMouseEnter(event) {
+//     const box = event.currentTarget;
+//     box.classList.add('box--active');
+// };
+
+// function onMouseLeave(event) {
+//     const box = event.currentTarget;
+//     box.classList.remove('box--active');
+// };
+// function onMouseMove(event) {
+//     console.log(event);
+// };
