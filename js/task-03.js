@@ -24,8 +24,8 @@ const imgEl = document.querySelector('#gallery');
 const addGallery = images.map(makeGallery).join('');
 imgEl.insertAdjacentHTML('afterend', addGallery);
 
-//console.log (addGallery);
-//imgEl.width = 640;
+// console.log (addGallery);
+// imgEl.width = '640px';
 
 var elems = document.getElementsByTagName('img'); // получает кол-цию елементов
 for(var i=0; i<elems.length; i++) elems[i].style.width='640px';
