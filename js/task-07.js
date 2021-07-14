@@ -6,7 +6,7 @@
 const inputEl = document.getElementById('font-size-control');
 const spanEl = document.getElementById('text');
 
-const handleInput = () => {
+const handleInput = (value) => {
     spanEl.style.fontSize = `${inputEl.value}px`;
 };
 
