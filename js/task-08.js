@@ -7,13 +7,33 @@
 // Каждый следующий div после первого, должен быть шире и выше предыдущего на 10px
 // Создай функцию destroyBoxes(), которая очищает div#boxes.
 
-// const divEl = document.querySelector('#controls');
-// // console.log(divEl);
 
-const inputEl = document.querySelector('#controls button');
+const inputEl = document.querySelector('#controls');
 const createButtonEl = document.querySelector('button[data-action="render"]');
 const deleteButtonEl = document.querySelector('button[data-action="destroy"]');
 const AddBoxes = document.querySelector('#boxes');
 
-let start_width = 30;
-let start_hight = 30;
+
+createButtonEl.addEventListener('click', () => createBoxes(inputEl.value));
+deleteButtonEl.addEventListener('click', destroyBoxes);
+
+function createBoxes(amount) {
+    let start_size = 30;
+    let boxesArray = [];
+    for(let i = 0; i < amount; i += 1) {
+    const newBox = document.createElement('newBox');
+    newBox.style.width = start_size + '30px';
+    newBox.style.height = start_size + '30px';
+    newBox.style.backgroundColor = `width: ${size}px; height: ${size}px; background-color: rgba( ${random()} , ${random()} , ${random()} )`;
+
+    boxesArray.push(newBox);
+    }}
+
+    const random = () => {
+        return Math.floor(Math.random() * 256);
+    };
+
+function destroyBoxes() {
+        boxes.innerHTML = '';
+    }
+
