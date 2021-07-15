@@ -9,31 +9,45 @@
 
 
 const inputEl = document.querySelector('#controls');
+const input = document.querySelector('input');
 const createButtonEl = document.querySelector('button[data-action="render"]');
 const deleteButtonEl = document.querySelector('button[data-action="destroy"]');
 const AddBoxes = document.querySelector('#boxes');
 
+let start_size = 30;
 
-createButtonEl.addEventListener('click', () => createBoxes(inputEl.value));
-deleteButtonEl.addEventListener('click', destroyBoxes);
 
 function createBoxes(amount) {
-    let start_size = 30;
-    let boxesArray = [];
-    for(let i = 0; i < amount; i += 1) {
-    const newBox = document.createElement('newBox');
-    newBox.style.width = start_size + '30px';
-    newBox.style.height = start_size + '30px';
-    newBox.style.backgroundColor = `width: ${size}px; height: ${size}px; background-color: rgba( ${random()} , ${random()} , ${random()} )`;
+    amount = Number(input.value);
 
-    boxesArray.push(newBox);
-    }}
+    for (let i = 0; i < amount; i ++) {
 
-    const random = () => {
-        return Math.floor(Math.random() * 256);
-    };
+        const r = Math.floor(Math.random() * (256));
+        const g = Math.floor(Math.random() * (256));
+        const b = Math.floor(Math.random() * (256));
+        const color = '#' + r.toString(16) + g.toString(16) + b.toString(16);
+
+    let newBox = document.createElement('div');
+        newBox.style.marginBottom = "10px";
+        newBox.style.borderWidth = "2px";
+        newBox.style.borderColor = 'red';
+    newBox.style.width = `${start_size + 10*i}px`;
+    newBox.style.height = `${start_size + 10*i}px`;
+    newBox.style.backgroundColor = color;
+
+    console.log(newBox.style);
+
+    newBox.classList.add('new');
+    AddBoxes.appendChild(newBox);
+    }
+inputEl.value = "";
+}
+
+
 
 function destroyBoxes() {
-        boxes.innerHTML = '';
-    }
+    AddBoxes.innerHTML = "";
+    };
 
+createButtonEl.addEventListener('click', createBoxes);
+deleteButtonEl.addEventListener('click', destroyBoxes);
