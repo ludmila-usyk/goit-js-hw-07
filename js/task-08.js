@@ -19,7 +19,7 @@ let start_size = 30;
 
 function createBoxes(amount) {
     amount = Number(input.value);
-
+console.log(amount);
     for (let i = 0; i < amount; i ++) {
 
         const r = Math.floor(Math.random() * (256));
@@ -29,8 +29,9 @@ function createBoxes(amount) {
 
     let newBox = document.createElement('div');
         newBox.style.marginBottom = "10px";
-        newBox.style.borderWidth = "2px";
-        newBox.style.borderColor = 'red';
+        newBox.style.borderWidth = "3px";
+        newBox.style.borderColor = 'black';
+        newBox.style.borderStyle = "dashed";
     newBox.style.width = `${start_size + 10*i}px`;
     newBox.style.height = `${start_size + 10*i}px`;
     newBox.style.backgroundColor = color;
